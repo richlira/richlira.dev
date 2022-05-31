@@ -1,0 +1,116 @@
+.profile {
+    align-items: center;
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    width: 100%;
+
+    @media only screen and (max-width: 319px) {
+        height: unset;
+    }
+
+    &-header {
+        height: auto;
+        width: 590px;
+
+        @media only screen and (max-width: 600px) {
+            padding: 0 20px;
+        }
+
+        &-title {
+            @media only screen and (max-width: 319px) {
+                font-size: 15px;
+            }
+        }
+
+        &-subtitle {
+            font-size: 30px;
+
+            @media only screen and (max-width: 600px) {
+                font-size: 25px;
+            }
+
+            @media only screen and (max-width: 319px) {
+                font-size: 15px;
+            }
+        }
+
+        &-list {
+            margin: 30px 0;
+            text-align: center;
+        }
+    }
+}
+
+h1 {
+    font-size: 90px;
+    line-height: 90px;
+    margin: unset;
+
+    @media only screen and (max-width: 319px) {
+        font-size: 40px;
+        line-height: 40px;
+    }
+}
+
+i {
+    font-size: 50px;
+    padding: 0 15px;
+    font-weight: 400;
+
+    @media only screen and (max-width: 414px) {
+        font-size: 35px;
+    }
+
+    @media only screen and (max-width: 325px) {
+        font-size: 25px;
+    }
+}
+
+.secondLine {
+    @media only screen and (max-width: 600px) {
+        margin-top: 20px
+    }
+}
+
+a {
+    color: black;
+}
+
+a:visited {
+    color: black;
+}
+
+@media (prefers-color-scheme: dark) {
+    a {
+        color: white;
+    }
+
+    a:visited {
+        color: white;
+    }
+}
+
+#linkedin :hover {
+    color: #0A66C2;
+}
+
+#github :hover {
+    color: #25ed51;
+}
+
+#devto :hover {
+    color: red;
+}
+
+#instagram :hover {
+    color: #25ed51;
+}
+
+#twitter :hover {
+    color: #1CA6D6;
+}
+
+#stackoverflow :hover {
+    color: #F48024;
+}
