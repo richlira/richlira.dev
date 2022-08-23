@@ -97,6 +97,10 @@ a:visited {
     a:visited {
         color: white;
     }
+
+    .profile-divider {
+        box-shadow: inset 0 12px 5px -12px rgb(255, 255, 255);
+    }
 }
 
 #linkedin :hover {
