@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://richlira.dev/sitemap.xml
