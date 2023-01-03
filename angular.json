@@ -98,7 +98,6 @@
             "karmaConfig": "karma.conf.js",
             "inlineStyleLanguage": "scss",
             "assets": [
-              "src/favicon.ico",
               "src/assets"
             ],
             "styles": [
@@ -110,5 +109,7 @@
       }
     }
   },
-  "defaultProject": "richlira.dev"
+  "cli": {
+    "analytics": "5ae57df1-7bb5-4b02-b8d1-b11cc214d71e"
+  }
 }
