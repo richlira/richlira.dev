@@ -1,7 +1,7 @@
 .profile {
     align-items: center;
-    background: rgb(34,193,195);
-    background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 100%);
+    background: rgb(58,114,180);
+    background: linear-gradient(90deg, rgba(58,114,180,1) 0%, rgba(253,89,29,1) 50%, rgba(252,176,69,1) 100%);
     display: flex;
     height: 100%;
     justify-content: center;
@@ -47,7 +47,7 @@
 
     &-divider {
         border: 0;
-        box-shadow: inset 0 12px 5px -12px rgba(0, 0, 0, 0.5);
+        box-shadow: inset 0 12px 5px -12px rgba(30, 30, 30, 0.777);
         height: 12px;
     }
 }
@@ -83,28 +83,20 @@ i {
     }
 }
 
-a {
-    color: black;
-}
-
-a:visited {
-    color: black;
-}
-
 #linkedin :hover {
-    color: #0A66C2;
+    color: #0a66c2df;
 }
 
 #github :hover {
-    color: #25ed51;
+    color: rgba(255, 255, 255, 0.82);
 }
 
 #devto :hover {
-    color: red;
+    color: rgba(255, 247, 11, 0.877);
 }
 
 #instagram :hover {
-    color: #25ed51;
+    color: #e700add2;
 }
 
 #twitter :hover {
