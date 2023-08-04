@@ -8,15 +8,11 @@ html, body {
 }
 
 h1, p {
-    color: rgba(237, 235, 235, 0.935);
-    text-shadow: 3px 4px 7px #CE5937;
+    color: rgb(54, 54, 54);
+    text-shadow: 3px 4px 7px #d2d2d2;
 }
 
-a {
-    color: rgba(255, 255, 255, 0.777);
-}
-
-a:visited {
-    color: rgba(255, 255, 255, 0.777);
+a, a:visited {
+    color: rgb(54, 54, 54);
 }
 
