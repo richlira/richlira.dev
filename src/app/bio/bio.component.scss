@@ -107,3 +107,8 @@ i {
 #stackoverflow :hover {
     color: #F48024;
 }
+.bio {
+    &-title {
+        width: 3em;
+    }
+}
