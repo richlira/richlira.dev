@@ -1,3 +1,5 @@
+@import '../../styles/_mixins';
+
 .profile {
     align-items: center;
     background: white;
@@ -86,26 +88,37 @@ i {
 
 #linkedin :hover {
     color: #0a66c2df;
+    @include uniform-text-shadow;
 }
 
 #github :hover {
-    color: rgba(230, 16, 16, 0.82);
+    color: #05b448;
+    @include uniform-text-shadow;
 }
 
 #devto :hover {
-    color: rgba(218, 204, 20, 0.897);
+    color: rgba(20, 30, 218, 0.897);
+    @include uniform-text-shadow;
 }
 
 #instagram :hover {
-    color: #b522ffd2;
+    color: rgba(255, 236, 25, 0.82);
+    @include uniform-text-shadow;
 }
 
 #twitter :hover {
-    color: #047ca4;
+    color: #ff0000d2;
+    @include uniform-text-shadow;
 }
 
 #stackoverflow :hover {
     color: #F48024;
+    @include uniform-text-shadow;
+}
+
+#medium :hover {
+    color: #ff5858;
+    @include uniform-text-shadow;
 }
 .bio {
     &-title {
