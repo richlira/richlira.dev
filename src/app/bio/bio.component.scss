@@ -92,22 +92,22 @@ i {
 }
 
 #github :hover {
-    color: #05b448;
+    color: #48fa8c;
     @include uniform-text-shadow;
 }
 
 #devto :hover {
-    color: rgba(20, 30, 218, 0.897);
+    color: rgba(2, 17, 183, 0.897);
     @include uniform-text-shadow;
 }
 
 #instagram :hover {
-    color: rgba(255, 236, 25, 0.82);
+    color: rgba(255, 0, 0, 0.82);
     @include uniform-text-shadow;
 }
 
 #twitter :hover {
-    color: #ff0000d2;
+    color: #006effd2;
     @include uniform-text-shadow;
 }
 
