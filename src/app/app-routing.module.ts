@@ -1,11 +1,10 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { BioComponent } from './bio/bio.component';
 
 const routes: Routes = [
   {
     path: "",
-    component: BioComponent,
+    loadChildren: () => import('./modules/bio/bio.module').then(m => m.BioModule)
   }
 ];
 
