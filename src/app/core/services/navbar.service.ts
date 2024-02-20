@@ -11,7 +11,7 @@ export class NavbarService {
         new NavbarItem('https://dev.to/richlira', 'devto', 'fa-brands fa-dev secondLine', 'black'),
         new NavbarItem('https://richlira.medium.com', 'medium', 'fa-brands fa-medium secondLine', 'red'),
         new NavbarItem('https://stackoverflow.com/users/5848847/richlira', 'stackoverflow', 'fa-brands fa-stack-overflow secondLine', '#F48024'),
-        new NavbarItem('https://developer.apple.com/augmented-reality/quick-look/', 'apple', 'fa-brands fa-apple secondLine', 'black'),
+        new NavbarItem('https://beautifulthings.xyz', 'apple', 'fa-brands fa-apple secondLine', 'black'),
       ];
 
     constructor() { }
