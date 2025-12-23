@@ -1,6 +1,6 @@
 # richlira.dev
 
-Personal portfolio website for Rich Lira, Frontend Software Engineer.
+Personal portfolio website for Rich Lira, Full-Stack AI Engineer.
 
 ## Tech Stack
 
@@ -50,7 +50,7 @@ This project is deployed on Vercel. Push to `main` triggers automatic deployment
 
 ## Author
 
-**Rich Lira** - Frontend Software Engineer
+**Rich Lira** - Full-Stack AI Engineer
 
 - [LinkedIn](https://www.linkedin.com/in/ricardolira/)
 - [Instagram](https://www.instagram.com/richlira/)

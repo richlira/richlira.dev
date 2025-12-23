@@ -12,7 +12,7 @@ export default function Home() {
             I like to build new things.
           </p>
           <p className="text-[30px] font-normal max-[600px]:text-[25px] max-[319px]:text-[15px] mt-0 mb-[50px]">
-            I&apos;m a Frontend Software Engineer.
+            I&apos;m a Full-Stack AI Engineer.
           </p>
           <hr className="border-0 shadow-[inset_0_12px_5px_-12px_#7d7d7dc6] h-3 my-2.5" />
         </header>

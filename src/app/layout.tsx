@@ -6,8 +6,8 @@ import './globals.css';
 config.autoAddCss = false;
 
 export const metadata: Metadata = {
-  title: 'Rich Lira, Software Engineer Frontend',
-  description: 'My name is Rich. I am a Software Engineer Frontend.',
+  title: 'Rich Lira, Full-Stack AI Engineer',
+  description: 'My name is Rich. I am a Full-Stack AI Engineer.',
   icons: {
     icon: [
       { url: '/favicon/favicon.ico', sizes: 'any' },
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     url: 'https://www.richlira.dev',
     type: 'profile',
     title: 'Rich Lira',
-    description: 'Software Engineer Frontend',
+    description: 'Full-Stack AI Engineer',
     images: [
       {
         url: 'https://richlira.dev/rich.jpg',
