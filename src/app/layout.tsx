@@ -3,6 +3,7 @@ import { config } from '@fortawesome/fontawesome-svg-core';
 import '@fortawesome/fontawesome-svg-core/styles.css';
 import './globals.css';
 import ThemeToggle from '@/components/ThemeToggle';
+import { Analytics } from '@vercel/analytics/next';
 
 config.autoAddCss = false;
 
@@ -63,6 +64,7 @@ export default function RootLayout({
           <div className="bg-orb bg-orb-4" />
         </div>
         {children}
+        <Analytics />
       </body>
     </html>
   );
