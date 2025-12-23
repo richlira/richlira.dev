@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from 'next';
 import { config } from '@fortawesome/fontawesome-svg-core';
 import '@fortawesome/fontawesome-svg-core/styles.css';
 import './globals.css';
+import ThemeToggle from '@/components/ThemeToggle';
 
 config.autoAddCss = false;
 
@@ -52,6 +53,8 @@ export default function RootLayout({
         <meta name="msapplication-TileColor" content="#da532c" />
       </head>
       <body>
+        {/* Theme Toggle */}
+        <ThemeToggle />
         {/* Animated Background Orbs */}
         <div className="bg-orbs" aria-hidden="true">
           <div className="bg-orb bg-orb-1" />
