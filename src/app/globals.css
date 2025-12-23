@@ -279,10 +279,7 @@ p {
   border-radius: 16px;
 
   /* Depth shadow */
-  box-shadow:
-    0 4px 16px rgba(0, 0, 0, 0.2),
-    0 1px 0 rgba(255, 255, 255, 0.15) inset,
-    0 -1px 0 rgba(255, 255, 255, 0.05) inset;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
 
   color: rgba(255, 255, 255, 0.7);
   transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
@@ -292,38 +289,12 @@ p {
 
 /* Specular highlight on button */
 .glass-icon::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 50%;
-  background: linear-gradient(
-    180deg,
-    rgba(255, 255, 255, 0.2) 0%,
-    rgba(255, 255, 255, 0.05) 50%,
-    transparent 100%
-  );
-  border-radius: 15px 15px 50% 50%;
-  pointer-events: none;
-  transition: opacity 0.3s ease;
+  display: none;
 }
 
 /* Reflection shine effect */
 .glass-icon::after {
-  content: "";
-  position: absolute;
-  top: 2px;
-  left: 10%;
-  right: 10%;
-  height: 1px;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(255, 255, 255, 0.4),
-    transparent
-  );
-  border-radius: 1px;
+  display: none;
 }
 
 /* Hover - glass illumination */
