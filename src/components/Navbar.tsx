@@ -32,7 +32,7 @@ export default function Navbar() {
         >
           <FontAwesomeIcon
             icon={iconMap[item.iconName]}
-            className="text-xl relative z-10"
+            className="text-4xl relative z-10"
           />
         </a>
       ))}
