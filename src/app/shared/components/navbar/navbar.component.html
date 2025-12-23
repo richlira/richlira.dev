@@ -1,7 +1,0 @@
-<nav class="Navbar">
-    <ng-container *ngFor="let navbarItem of navbarService.navbarItems">
-        <a [href]="navbarItem.href" target="_blank" [id]="navbarItem.id" [attr.aria-label]="navbarItem.id" [style.--hover-color]="navbarItem.hoverColor">
-            <i [class]="navbarItem.iconClass"></i>
-        </a>
-    </ng-container>
-</nav>
