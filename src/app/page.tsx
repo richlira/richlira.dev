@@ -1,21 +1,35 @@
+import Image from 'next/image';
 import Navbar from '@/components/Navbar';
 
 export default function Home() {
   return (
-    <div className="flex items-center justify-center h-full w-full max-[319px]:h-auto">
-      <div className="h-auto max-[600px]:px-5">
-        <header>
-          <h1 className="text-[90px] leading-[90px] m-0 w-[3em] max-[319px]:text-[40px] max-[319px]:leading-[40px]">
+    <div className="flex items-center justify-center min-h-screen w-full p-6 max-[319px]:p-3">
+      <div className="liquid-glass max-w-md w-full">
+        <header className="text-center">
+          {/* Profile Photo */}
+          <div className="profile-photo-container">
+            <Image
+              src="/rich.jpg"
+              alt="Rich Lira"
+              width={120}
+              height={120}
+              className="profile-photo"
+              priority
+            />
+          </div>
+
+          <h1 className="text-[56px] leading-[1.1] max-[600px]:text-[42px] max-[319px]:text-[32px]">
             Rich Lira
           </h1>
-          <p className="text-[30px] font-normal max-[600px]:text-[25px] max-[319px]:text-[15px] mb-0">
+          <p className="text-[18px] font-normal max-[600px]:text-[16px] max-[319px]:text-[14px] mb-1 mt-3">
             I like to build new things.
           </p>
-          <p className="text-[30px] font-normal max-[600px]:text-[25px] max-[319px]:text-[15px] mt-0 mb-[50px]">
-            I&apos;m a Full-Stack AI Engineer.
+          <p className="text-[16px] font-light max-[600px]:text-[14px] max-[319px]:text-[12px] mt-1 mb-6 opacity-70">
+            Full-Stack AI Engineer
           </p>
-          <hr className="border-0 shadow-[inset_0_12px_5px_-12px_#7d7d7dc6] h-3 my-2.5" />
+          <hr className="glass-divider" />
         </header>
+
         <Navbar />
       </div>
     </div>

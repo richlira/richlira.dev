@@ -51,7 +51,16 @@ export default function RootLayout({
       <head>
         <meta name="msapplication-TileColor" content="#da532c" />
       </head>
-      <body>{children}</body>
+      <body>
+        {/* Animated Background Orbs */}
+        <div className="bg-orbs" aria-hidden="true">
+          <div className="bg-orb bg-orb-1" />
+          <div className="bg-orb bg-orb-2" />
+          <div className="bg-orb bg-orb-3" />
+          <div className="bg-orb bg-orb-4" />
+        </div>
+        {children}
+      </body>
     </html>
   );
 }

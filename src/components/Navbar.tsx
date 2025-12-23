@@ -19,7 +19,7 @@ const iconMap: Record<string, IconDefinition> = {
 
 export default function Navbar() {
   return (
-    <nav className="my-10 text-center">
+    <nav className="mt-6 text-center flex justify-center flex-wrap gap-4">
       {navbarItems.map((item) => (
         <a
           key={item.id}
@@ -28,22 +28,11 @@ export default function Navbar() {
           rel="noopener noreferrer"
           id={item.id}
           aria-label={item.id}
-          className="inline-block px-4 transition-colors duration-200 hover:drop-shadow-lg"
-          style={
-            {
-              '--hover-color': item.hoverColor,
-            } as React.CSSProperties
-          }
-          onMouseEnter={(e) => {
-            e.currentTarget.style.color = item.hoverColor;
-          }}
-          onMouseLeave={(e) => {
-            e.currentTarget.style.color = '';
-          }}
+          className={`glass-icon ${item.id}`}
         >
           <FontAwesomeIcon
             icon={iconMap[item.iconName]}
-            className="text-5xl max-[414px]:text-4xl max-[325px]:text-2xl"
+            className="text-xl relative z-10"
           />
         </a>
       ))}

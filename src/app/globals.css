@@ -1,22 +1,528 @@
 @import "tailwindcss";
 
-html,
+/* San Francisco Font - Apple's System Font */
+@font-face {
+  font-family: "SF Pro Display";
+  src: local("SF Pro Display"), local(".SF NS Display"), local(".SFNSDisplay-Regular");
+  font-weight: 100 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "SF Pro Text";
+  src: local("SF Pro Text"), local(".SF NS Text"), local(".SFNSText-Regular");
+  font-weight: 100 900;
+  font-style: normal;
+}
+
+/* Apple Liquid Glass Design System (2025) - Lake Tahoe Inspired */
+:root {
+  --glass-bg: rgba(255, 255, 255, 0.08);
+  --glass-border: rgba(255, 255, 255, 0.2);
+  --glass-highlight: rgba(255, 255, 255, 0.5);
+  --text-primary: rgba(255, 255, 255, 0.95);
+  --text-secondary: rgba(255, 255, 255, 0.7);
+}
+
+/* Dynamic Animated Background */
+html {
+  min-height: 100%;
+}
+
 body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
-    Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-  height: 100%;
-  min-height: 500px;
+  font-family: "SF Pro Display", "SF Pro Text", -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif;
+  min-height: 100vh;
+  margin: 0;
   padding: 0;
+  background: #0a0a1a;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Animated Gradient Base Layer */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    #0a0a1a 0%,
+    #1a1a3e 25%,
+    #0d2847 50%,
+    #1a0a2e 75%,
+    #0a1a2a 100%
+  );
+  background-size: 400% 400%;
+  animation: gradientShift 20s ease infinite;
+  z-index: 0;
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  25% { background-position: 100% 25%; }
+  50% { background-position: 50% 100%; }
+  75% { background-position: 25% 0%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Floating Color Orbs */
+.bg-orbs {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.bg-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.5;
+  mix-blend-mode: screen;
+}
+
+.bg-orb-1 {
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(100, 180, 255, 0.6) 0%, transparent 70%);
+  top: -200px;
+  left: -100px;
+  animation: orb1Move 25s ease-in-out infinite;
+}
+
+.bg-orb-2 {
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(180, 100, 255, 0.5) 0%, transparent 70%);
+  top: 20%;
+  right: -150px;
+  animation: orb2Move 30s ease-in-out infinite;
+}
+
+.bg-orb-3 {
+  width: 450px;
+  height: 450px;
+  background: radial-gradient(circle, rgba(255, 100, 180, 0.4) 0%, transparent 70%);
+  bottom: -100px;
+  left: 30%;
+  animation: orb3Move 22s ease-in-out infinite;
+}
+
+.bg-orb-4 {
+  width: 350px;
+  height: 350px;
+  background: radial-gradient(circle, rgba(100, 255, 200, 0.35) 0%, transparent 70%);
+  top: 60%;
+  left: -100px;
+  animation: orb4Move 28s ease-in-out infinite;
+}
+
+@keyframes orb1Move {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  25% { transform: translate(100px, 150px) scale(1.2); }
+  50% { transform: translate(200px, 50px) scale(0.9); }
+  75% { transform: translate(50px, 200px) scale(1.1); }
+}
+
+@keyframes orb2Move {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  25% { transform: translate(-150px, 100px) scale(1.15); }
+  50% { transform: translate(-50px, 200px) scale(0.85); }
+  75% { transform: translate(-200px, -50px) scale(1.05); }
+}
+
+@keyframes orb3Move {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  25% { transform: translate(100px, -100px) scale(1.1); }
+  50% { transform: translate(-100px, -150px) scale(0.95); }
+  75% { transform: translate(150px, -50px) scale(1.2); }
+}
+
+@keyframes orb4Move {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  25% { transform: translate(150px, -80px) scale(1.15); }
+  50% { transform: translate(100px, 100px) scale(0.9); }
+  75% { transform: translate(200px, 50px) scale(1.05); }
+}
+
+/* Shimmer Overlay */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 80% 50% at 50% 0%, rgba(255, 255, 255, 0.03) 0%, transparent 50%);
+  animation: shimmer 10s ease-in-out infinite;
+  pointer-events: none;
+  z-index: 0;
+}
+
+@keyframes shimmer {
+  0%, 100% { opacity: 0.5; transform: translateY(0); }
+  50% { opacity: 0.8; transform: translateY(-30px); }
+}
+
+/* Main Liquid Glass Container */
+.liquid-glass {
+  position: relative;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.1) 0%,
+    rgba(255, 255, 255, 0.05) 50%,
+    rgba(255, 255, 255, 0.08) 100%
+  );
+  backdrop-filter: blur(40px) saturate(180%) brightness(1.1);
+  -webkit-backdrop-filter: blur(40px) saturate(180%) brightness(1.1);
+  border-radius: 36px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.3),
+    0 0 0 1px rgba(255, 255, 255, 0.05) inset,
+    0 1px 0 rgba(255, 255, 255, 0.2) inset;
+  padding: 48px;
+  overflow: hidden;
+  z-index: 1;
+}
+
+/* Top Specular Highlight */
+.liquid-glass::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 60%;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.15) 0%,
+    rgba(255, 255, 255, 0.03) 40%,
+    transparent 100%
+  );
+  border-radius: 36px 36px 50% 50%;
+  pointer-events: none;
+}
+
+/* Prismatic Rainbow Edge */
+.liquid-glass::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 15%;
+  right: 15%;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 120, 120, 0.6) 15%,
+    rgba(255, 200, 100, 0.6) 30%,
+    rgba(150, 255, 150, 0.6) 50%,
+    rgba(100, 180, 255, 0.6) 70%,
+    rgba(180, 130, 255, 0.6) 85%,
+    transparent 100%
+  );
+  filter: blur(0.5px);
+}
+
+/* Typography */
+h1 {
+  color: var(--text-primary);
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  text-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
   margin: 0;
 }
 
-h1,
 p {
-  color: rgb(54, 54, 54);
-  text-shadow: 3px 4px 7px #d2d2d2;
+  color: var(--text-secondary);
+  font-weight: 400;
+  letter-spacing: -0.01em;
 }
 
-a,
-a:visited {
-  color: rgb(54, 54, 54);
+/* Glass Divider */
+.glass-divider {
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.15),
+    rgba(255, 255, 255, 0.25),
+    rgba(255, 255, 255, 0.15),
+    transparent
+  );
+  border: none;
+  margin: 24px 0;
 }
+
+/* Liquid Glass Buttons - True Transparent Glass */
+.glass-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+
+  /* True glass transparency */
+  background: linear-gradient(
+    145deg,
+    rgba(255, 255, 255, 0.12) 0%,
+    rgba(255, 255, 255, 0.03) 50%,
+    rgba(255, 255, 255, 0.06) 100%
+  );
+  backdrop-filter: blur(20px) saturate(150%);
+  -webkit-backdrop-filter: blur(20px) saturate(150%);
+
+  /* Glass edge */
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 16px;
+
+  /* Depth shadow */
+  box-shadow:
+    0 4px 16px rgba(0, 0, 0, 0.2),
+    0 1px 0 rgba(255, 255, 255, 0.15) inset,
+    0 -1px 0 rgba(255, 255, 255, 0.05) inset;
+
+  color: rgba(255, 255, 255, 0.7);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Specular highlight on button */
+.glass-icon::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 50%;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.2) 0%,
+    rgba(255, 255, 255, 0.05) 50%,
+    transparent 100%
+  );
+  border-radius: 15px 15px 50% 50%;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+/* Reflection shine effect */
+.glass-icon::after {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 10%;
+  right: 10%;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.4),
+    transparent
+  );
+  border-radius: 1px;
+}
+
+/* Hover - glass illumination */
+.glass-icon:hover {
+  transform: translateY(-6px) scale(1.08);
+  background: linear-gradient(
+    145deg,
+    rgba(255, 255, 255, 0.18) 0%,
+    rgba(255, 255, 255, 0.06) 50%,
+    rgba(255, 255, 255, 0.1) 100%
+  );
+  border-color: rgba(255, 255, 255, 0.3);
+  color: rgba(255, 255, 255, 0.95);
+  box-shadow:
+    0 12px 32px rgba(0, 0, 0, 0.3),
+    0 0 40px rgba(255, 255, 255, 0.1),
+    0 1px 0 rgba(255, 255, 255, 0.25) inset;
+}
+
+.glass-icon:hover::before {
+  opacity: 1;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.3) 0%,
+    rgba(255, 255, 255, 0.08) 50%,
+    transparent 100%
+  );
+}
+
+.glass-icon:active {
+  transform: translateY(-2px) scale(1.02);
+  transition-duration: 0.1s;
+}
+
+/* Social Colors - Subtle Tinted Glass */
+.glass-icon.linkedin:hover {
+  background: linear-gradient(
+    145deg,
+    rgba(10, 102, 194, 0.25) 0%,
+    rgba(10, 102, 194, 0.08) 50%,
+    rgba(10, 102, 194, 0.12) 100%
+  );
+  border-color: rgba(10, 102, 194, 0.4);
+  box-shadow:
+    0 12px 32px rgba(10, 102, 194, 0.25),
+    0 0 30px rgba(10, 102, 194, 0.15),
+    0 1px 0 rgba(255, 255, 255, 0.2) inset;
+}
+
+.glass-icon.instagram:hover {
+  background: linear-gradient(
+    145deg,
+    rgba(225, 48, 108, 0.25) 0%,
+    rgba(131, 58, 180, 0.15) 50%,
+    rgba(225, 48, 108, 0.12) 100%
+  );
+  border-color: rgba(225, 48, 108, 0.4);
+  box-shadow:
+    0 12px 32px rgba(225, 48, 108, 0.25),
+    0 0 30px rgba(131, 58, 180, 0.15),
+    0 1px 0 rgba(255, 255, 255, 0.2) inset;
+}
+
+.glass-icon.twitter:hover {
+  background: linear-gradient(
+    145deg,
+    rgba(29, 161, 242, 0.25) 0%,
+    rgba(29, 161, 242, 0.08) 50%,
+    rgba(29, 161, 242, 0.12) 100%
+  );
+  border-color: rgba(29, 161, 242, 0.4);
+  box-shadow:
+    0 12px 32px rgba(29, 161, 242, 0.25),
+    0 0 30px rgba(29, 161, 242, 0.15),
+    0 1px 0 rgba(255, 255, 255, 0.2) inset;
+}
+
+.glass-icon.github:hover {
+  background: linear-gradient(
+    145deg,
+    rgba(255, 255, 255, 0.2) 0%,
+    rgba(255, 255, 255, 0.06) 50%,
+    rgba(255, 255, 255, 0.1) 100%
+  );
+  border-color: rgba(255, 255, 255, 0.35);
+  box-shadow:
+    0 12px 32px rgba(255, 255, 255, 0.1),
+    0 0 30px rgba(255, 255, 255, 0.08),
+    0 1px 0 rgba(255, 255, 255, 0.25) inset;
+}
+
+/* Profile Photo - Liquid Glass Style */
+.profile-photo-container {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  margin: 0 auto 24px;
+  border-radius: 50%;
+  overflow: hidden;
+  padding: 3px;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.3) 0%,
+    rgba(255, 255, 255, 0.1) 50%,
+    rgba(255, 255, 255, 0.2) 100%
+  );
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.3),
+    0 0 0 1px rgba(255, 255, 255, 0.1);
+  animation: photoAppear 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.2s forwards;
+  opacity: 0;
+}
+
+@keyframes photoAppear {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.profile-photo-container::before {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  border-radius: 50%;
+  background: linear-gradient(
+    135deg,
+    rgba(100, 200, 255, 0.4) 0%,
+    rgba(180, 130, 255, 0.3) 50%,
+    rgba(100, 220, 255, 0.4) 100%
+  );
+  z-index: -1;
+  filter: blur(8px);
+  opacity: 0.6;
+}
+
+.profile-photo {
+  width: 100%;
+  height: 100%;
+  border-radius: 50% !important;
+  object-fit: cover;
+  display: block;
+}
+
+.profile-photo-container img {
+  border-radius: 50% !important;
+}
+
+/* Links */
+a {
+  color: rgba(255, 255, 255, 0.7);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: rgba(255, 255, 255, 0.95);
+}
+
+/* Entry Animation */
+@keyframes glassAppear {
+  from {
+    opacity: 0;
+    transform: translateY(40px) scale(0.92);
+    filter: blur(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+  }
+}
+
+.liquid-glass {
+  animation: glassAppear 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Icon Stagger Animation */
+@keyframes iconFloat {
+  from {
+    opacity: 0;
+    transform: translateY(24px) scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.glass-icon {
+  opacity: 0;
+  animation: iconFloat 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.glass-icon:nth-child(1) { animation-delay: 0.4s; }
+.glass-icon:nth-child(2) { animation-delay: 0.5s; }
+.glass-icon:nth-child(3) { animation-delay: 0.6s; }
+.glass-icon:nth-child(4) { animation-delay: 0.7s; }
