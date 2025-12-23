@@ -19,7 +19,7 @@ const iconMap: Record<string, IconDefinition> = {
 
 export default function Navbar() {
   return (
-    <nav className="mt-6 text-center flex justify-center flex-wrap gap-4">
+    <nav className="mt-6 text-center grid grid-cols-2 justify-items-center gap-4 md:flex md:justify-center md:flex-wrap">
       {navbarItems.map((item) => (
         <a
           key={item.id}
