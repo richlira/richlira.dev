@@ -5,37 +5,64 @@ import { useEffect, useState } from 'react';
 type Theme = 'light' | 'dark';
 
 export default function ThemeToggle() {
-  const [theme, setTheme] = useState<Theme>('dark');
+  const [theme, setTheme] = useState<Theme | null>(null);
   const [mounted, setMounted] = useState(false);
+
+  // Get current system theme from CSS media query
+  const getSystemTheme = (): Theme => {
+    if (typeof window !== 'undefined' && window.matchMedia) {
+      return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    }
+    return 'dark';
+  };
 
   useEffect(() => {
     setMounted(true);
-    // Check localStorage first, then system preference
-    const stored = localStorage.getItem('theme') as Theme | null;
-    if (stored) {
-      setTheme(stored);
-      applyTheme(stored);
+
+    // Check if user toggled theme in THIS session only (sessionStorage)
+    const sessionTheme = sessionStorage.getItem('theme');
+
+    if (sessionTheme === 'light' || sessionTheme === 'dark') {
+      // User toggled theme in this session, apply it
+      setTheme(sessionTheme);
+      document.documentElement.setAttribute('data-theme', sessionTheme);
     } else {
-      // Default to system preference
-      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-      const systemTheme: Theme = prefersDark ? 'dark' : 'light';
+      // No session override: let CSS handle it via prefers-color-scheme
+      // Just sync React state with system theme for the toggle icon
+      const systemTheme = getSystemTheme();
       setTheme(systemTheme);
-      applyTheme(systemTheme);
+      // Ensure no data-theme attribute - let CSS media query handle it
+      document.documentElement.removeAttribute('data-theme');
     }
+
+    // Listen for system theme changes
+    const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+    const handleChange = (e: MediaQueryListEvent) => {
+      // Only update if user hasn't manually toggled in this session
+      const sessionOverride = sessionStorage.getItem('theme');
+      if (!sessionOverride) {
+        const newTheme: Theme = e.matches ? 'dark' : 'light';
+        setTheme(newTheme);
+        // Remove data-theme to let CSS handle it
+        document.documentElement.removeAttribute('data-theme');
+      }
+    };
+
+    mediaQuery.addEventListener('change', handleChange);
+    return () => mediaQuery.removeEventListener('change', handleChange);
   }, []);
 
-  const applyTheme = (newTheme: Theme) => {
+  const toggleTheme = () => {
+    const currentTheme = theme || getSystemTheme();
+    const newTheme: Theme = currentTheme === 'dark' ? 'light' : 'dark';
+    setTheme(newTheme);
+    // Save to sessionStorage (only persists for this browser session/tab)
+    sessionStorage.setItem('theme', newTheme);
+    // Apply via data-theme attribute for manual override
     document.documentElement.setAttribute('data-theme', newTheme);
   };
 
-  const toggleTheme = () => {
-    const newTheme: Theme = theme === 'dark' ? 'light' : 'dark';
-    setTheme(newTheme);
-    localStorage.setItem('theme', newTheme);
-    applyTheme(newTheme);
-  };
-
-  if (!mounted) return null;
+  if (!mounted || theme === null) return null;
 
   return (
     <button
