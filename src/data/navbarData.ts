@@ -9,6 +9,13 @@ export const navbarItems: NavbarItem[] = [
     isExternal: false,
   },
   {
+    href: '/community',
+    id: 'community',
+    iconName: 'users',
+    hoverColor: '#8b5cf6',
+    isExternal: false,
+  },
+  {
     href: 'https://www.linkedin.com/in/ricardolira/',
     id: 'linkedin',
     iconName: 'linkedin',
