@@ -114,7 +114,7 @@ export default function PrivacyPage() {
           <p>
             If you have any questions about this privacy policy, please contact
             us at{' '}
-            <a href="mailto:rich@richlira.dev">rich@richlira.dev</a>.
+            <a href="mailto:micorreo@richlira.com">micorreo@richlira.com</a>.
           </p>
         </section>
 
