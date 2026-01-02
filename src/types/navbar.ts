@@ -3,4 +3,5 @@ export interface NavbarItem {
   id: string;
   iconName: string;
   hoverColor: string;
+  isExternal?: boolean;
 }
