@@ -1,0 +1,15 @@
+.anthropic-themed .community-hero h1 {
+  background: linear-gradient(135deg, #D4714E 0%, #B85C3A 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.anthropic-themed .feature-card-icon {
+  background: linear-gradient(135deg, #D4714E 0%, #B85C3A 100%);
+}
+
+.anthropic-themed .community-hero-icon {
+  background: transparent;
+  box-shadow: none;
+}

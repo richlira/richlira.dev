@@ -4,54 +4,54 @@ import Image from 'next/image';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faApple } from '@fortawesome/free-brands-svg-icons';
 import {
-  faLayerGroup,
-  faCoins,
-  faClockRotateLeft,
+  faMicrophone,
+  faComments,
+  faFileLines,
   faShieldHalved,
 } from '@fortawesome/free-solid-svg-icons';
 import LiquidGlassEffect from '@/components/LiquidGlassEffect';
 import FeatureCard from '@/components/products/FeatureCard';
 
 export const metadata: Metadata = {
-  title: 'Afina AI - The Prompt Engineering Lab | Rich Lira',
+  title: 'MeetingMind - AI Meeting Assistant | Rich Lira',
   description:
-    'The prompt engineering lab for AI developers. Test prompts across Claude, OpenAI, Gemini, and On-Device AI with real-time cost tracking.',
+    'AI-powered meeting assistant that listens, questions, and summarizes — running on iPhone with swappable cloud and on-device providers.',
   openGraph: {
-    title: 'Afina AI - The Prompt Engineering Lab',
+    title: 'MeetingMind - AI Meeting Assistant',
     description:
-      'Test prompts across multiple AI models with real-time cost tracking',
-    url: 'https://richlira.dev/products/afina-ai',
+      'AI-powered meeting assistant that listens, questions, and summarizes',
+    url: 'https://richlira.dev/products/meeting-mind',
   },
 };
 
 const features = [
   {
-    icon: faLayerGroup,
-    title: 'Multi-Model Testing',
+    icon: faMicrophone,
+    title: 'Real-Time Transcription',
     description:
-      'Test your prompts across Claude, OpenAI, Gemini, and Apple On-Device AI. Compare responses side by side.',
+      'Cloud via OpenAI Whisper or fully on-device via SpeechAnalyzer. Works offline with zero data leaving your phone.',
   },
   {
-    icon: faCoins,
-    title: 'Cost Tracking',
+    icon: faComments,
+    title: 'Smart Questions',
     description:
-      'Real-time token counting and cost estimation. Know exactly how much each prompt costs before sending.',
+      'AI generates probing questions during recording to deepen your meeting insights and surface what matters.',
   },
   {
-    icon: faClockRotateLeft,
-    title: 'Version History',
+    icon: faFileLines,
+    title: 'Instant Summaries',
     description:
-      'Keep track of all your prompt iterations. Easily compare and revert to previous versions.',
+      'Automatic structured summaries with key points, action items, and participants when recording ends.',
   },
   {
     icon: faShieldHalved,
     title: 'Privacy First',
     description:
-      'API keys stored securely in Keychain. Use on-device AI for sensitive prompts that never leave your device.',
+      'No servers, no accounts, no tracking. Fully offline mode available. API keys stored securely in Keychain.',
   },
 ];
 
-export default function AfinaAiPage() {
+export default function MeetingMindPage() {
   return (
     <LiquidGlassEffect>
       <div className="max-w-2xl w-full">
@@ -59,15 +59,15 @@ export default function AfinaAiPage() {
         <div className="product-hero">
           <div className="product-hero-icon">
             <Image
-              src="/products/afina-ai/icon.png"
-              alt="Afina AI"
+              src="/products/meeting-mind/icon.png"
+              alt="MeetingMind"
               width={100}
               height={100}
             />
           </div>
-          <h1>Afina AI</h1>
+          <h1>MeetingMind</h1>
           <p className="product-hero-tagline">
-            The prompt engineering lab for AI developers
+            AI-powered meeting assistant that listens, questions, and summarizes
           </p>
         </div>
 
@@ -87,24 +87,19 @@ export default function AfinaAiPage() {
 
         {/* CTA */}
         <div className="cta-section">
-          <a
-            href="https://apps.apple.com/us/app/afina-ai/id6757284918"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="app-store-badge"
-          >
+          <div className="app-store-badge">
             <FontAwesomeIcon icon={faApple} />
             <div className="app-store-badge-text">
-              <span className="app-store-badge-label">Download on the</span>
+              <span className="app-store-badge-label">Coming Soon on the</span>
               <span className="app-store-badge-store">App Store</span>
             </div>
-          </a>
+          </div>
         </div>
 
         {/* Footer */}
         <footer className="product-footer">
           <p>
-            <Link href="/products/afina-ai/privacy">Privacy Policy</Link>
+            <Link href="/products/meeting-mind/privacy">Privacy Policy</Link>
           </p>
           <p>Built by Rich Lira</p>
         </footer>

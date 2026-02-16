@@ -16,6 +16,13 @@ export default function ProductsPage() {
           platform="ios"
           icon="/products/afina-ai/icon.png"
         />
+        <ProductCard
+          name="MeetingMind"
+          tagline="AI-powered meeting assistant that listens, questions, and summarizes"
+          slug="meeting-mind"
+          platform="ios"
+          icon="/products/meeting-mind/icon.png"
+        />
       </div>
     </>
   );
