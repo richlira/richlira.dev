@@ -13,3 +13,177 @@
   background: transparent;
   box-shadow: none;
 }
+
+/* Ambassador Badge */
+.ambassador-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  border-radius: 9999px;
+  background: linear-gradient(135deg, #D4714E 0%, #B85C3A 100%);
+  color: #fff;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+.ambassador-badge:hover {
+  opacity: 0.85;
+}
+
+/* Section Titles */
+.section-title {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: #D4714E;
+}
+
+/* Past Event Section */
+.past-event-section {
+  margin-bottom: 2.5rem;
+}
+
+.past-event-card {
+  border: 1px solid rgba(212, 113, 78, 0.15);
+  border-radius: 12px;
+  padding: 1.25rem;
+  background: rgba(212, 113, 78, 0.04);
+}
+
+.past-event-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.75rem;
+}
+
+.past-event-date {
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: #D4714E;
+}
+
+.past-event-location {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.85rem;
+  opacity: 0.7;
+}
+
+.past-event-description {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  opacity: 0.8;
+  margin-bottom: 1rem;
+}
+
+.speakers-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.speaker-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  padding: 0.75rem;
+  border-radius: 8px;
+  background: rgba(212, 113, 78, 0.06);
+  border: 1px solid rgba(212, 113, 78, 0.1);
+}
+
+.speaker-name {
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+
+.speaker-org {
+  font-size: 0.75rem;
+  color: #D4714E;
+}
+
+.speaker-topic {
+  font-size: 0.75rem;
+  opacity: 0.6;
+  margin-top: 0.15rem;
+}
+
+.past-event-link {
+  display: inline-block;
+  font-size: 0.85rem;
+  color: #D4714E;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.past-event-link:hover {
+  opacity: 0.7;
+}
+
+/* Tour Section */
+.tour-section {
+  margin-bottom: 2.5rem;
+}
+
+.tour-tagline {
+  font-size: 0.9rem;
+  opacity: 0.6;
+  margin-bottom: 1rem;
+  font-style: italic;
+}
+
+.tour-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.6rem;
+}
+
+.tour-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.75rem 0.5rem;
+  border-radius: 8px;
+  border: 1px solid rgba(212, 113, 78, 0.12);
+  background: rgba(212, 113, 78, 0.04);
+  text-align: center;
+}
+
+.tour-city {
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+
+.tour-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.75rem;
+  opacity: 0.6;
+}
+
+.tour-date {
+  font-size: 0.75rem;
+}
+
+.tour-country {
+  font-size: 0.85rem;
+}
+
+@media (max-width: 640px) {
+  .speakers-grid {
+    grid-template-columns: 1fr;
+  }
+  .tour-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

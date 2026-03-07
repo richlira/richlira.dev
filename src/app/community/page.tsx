@@ -12,10 +12,10 @@ export default function CommunityPage() {
       <div className="community-grid">
         <CommunityCard
           name="Claude Code Meetups"
-          tagline="Organizing Claude Code meetups in Mexico City & Monterrey"
+          tagline="Claude Ambassador — Organizing the Claude Sin Fronteras Tour across 9 cities in Mexico & USA"
           slug="claude-code-meetups"
           icon="/community/claude-code-meetups/icon.svg"
-          badge="Meetup Host"
+          badge="Claude Ambassador"
           badgeIcon={faUsers}
         />
         <CommunityCard

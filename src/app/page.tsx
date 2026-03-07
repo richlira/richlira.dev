@@ -23,11 +23,10 @@ export default function Home() {
             <h1 className="text-[56px] leading-[1.1] max-[600px]:text-[42px] max-[319px]:text-[32px]">
               Rich Lira
             </h1>
-            <p className="text-[18px] font-normal max-[600px]:text-[16px] max-[319px]:text-[14px] mb-1 mt-3">
-              I like to build new things.
-            </p>
-            <p className="text-[16px] font-light max-[600px]:text-[14px] max-[319px]:text-[12px] mt-1 mb-6 opacity-70">
+            <p className="text-[16px] font-light max-[600px]:text-[14px] max-[319px]:text-[12px] mt-3 mb-6 opacity-70">
               Full-Stack AI Engineer
+              <br />
+              Claude Community Ambassador
             </p>
             <hr className="glass-divider" />
           </header>

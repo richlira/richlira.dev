@@ -5,19 +5,23 @@ import {
   faUsers,
   faBuilding,
   faGlobe,
+  faMapMarkerAlt,
+  faCalendarCheck,
+  faRoute,
 } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import LiquidGlassEffect from '@/components/LiquidGlassEffect';
 import FeatureCard from '@/components/products/FeatureCard';
 import './meetups.css';
 
 export const metadata: Metadata = {
-  title: 'Claude Code Meetups - Mexico City & Monterrey | Rich Lira',
+  title: 'Claude Code Meetups — Claude Ambassador | Rich Lira',
   description:
-    'Organizing Claude Code community meetups in Mexico City and Monterrey. 650+ registrations, sold-out events with top industry talent.',
+    'Claude Community Ambassador organizing the Claude Sin Fronteras Tour 2026 across 9 cities in Mexico & USA. 650+ registrations, sold-out events.',
   openGraph: {
-    title: 'Claude Code Meetups - Mexico City & Monterrey',
+    title: 'Claude Code Meetups — Claude Ambassador',
     description:
-      'Organizing Claude Code community meetups in Mexico',
+      'Claude Sin Fronteras Tour 2026 — 9 cities, 2 countries',
     url: 'https://richlira.dev/community/claude-code-meetups',
   },
 };
@@ -27,7 +31,7 @@ const features = [
     icon: faUsers,
     title: '650+ Registrations & Growing',
     description:
-      'First edition sold out at 150 attendees in Mexico City with CTOs, founders, and senior engineers from top companies. Now expanding to Monterrey.',
+      'First edition sold out at 150 attendees in Mexico City with CTOs, founders, and senior engineers from top companies. Now expanding across 9 cities.',
   },
   {
     icon: faMicrophone,
@@ -49,6 +53,27 @@ const features = [
   },
 ];
 
+const tourCities = [
+  { city: 'Monterrey', date: 'Mar 20', country: 'MX' },
+  { city: 'Mexico City', date: 'Mar 21', country: 'MX' },
+  { city: 'Mérida', date: 'Mar 24', country: 'MX' },
+  { city: 'Cancún', date: 'Mar 26', country: 'MX' },
+  { city: 'Colima', date: 'Apr 9', country: 'MX' },
+  { city: 'Villahermosa', date: 'Apr 14', country: 'MX' },
+  { city: 'Hermosillo', date: 'Apr 16', country: 'MX' },
+  { city: 'Stanford', date: 'Apr 21', country: 'US' },
+  { city: 'San Francisco', date: 'Apr 23', country: 'US' },
+];
+
+const pastEventSpeakers = [
+  { name: 'Cesar Mendez', org: 'AWS UG Leader', topic: 'Developer acceleration in the modern era' },
+  { name: 'Enrique Diaz', org: 'Google Developer Group', topic: 'Building software products with generative AI' },
+  { name: 'Carlos Lara', org: 'Saptiva AI', topic: 'Product engineering with context and MCP' },
+  { name: 'Javier Duran Vega', org: 'Globant', topic: 'Intelligent retrieval systems with Claude agents' },
+  { name: 'Carolina Acosta', org: '500 Global', topic: 'AI in venture capital' },
+  { name: 'Emilio Peña', org: 'Product LatAm', topic: 'Agentic automation workflows' },
+];
+
 export default function ClaudeCodeMeetupsPage() {
   return (
     <LiquidGlassEffect>
@@ -65,11 +90,20 @@ export default function ClaudeCodeMeetupsPage() {
           </div>
           <h1>Claude Code Meetups</h1>
           <p className="community-hero-tagline">
-            Organizing Claude Code community meetups in Mexico City &amp; Monterrey
+            Claude Community Ambassador — Organizing the Claude Sin Fronteras Tour 2026
           </p>
+          <a
+            href="https://claude.com/community/ambassadors"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="ambassador-badge"
+          >
+            <FontAwesomeIcon icon={faGlobe} style={{ width: 14, height: 14 }} />
+            Claude Ambassador Program
+          </a>
         </div>
 
-        {/* First Edition Highlight */}
+        {/* Features */}
         <section className="mb-12">
           <div className="features-grid">
             {features.map((feature) => (
@@ -83,10 +117,67 @@ export default function ClaudeCodeMeetupsPage() {
           </div>
         </section>
 
+        {/* Past Event */}
+        <section className="past-event-section">
+          <h2 className="section-title">
+            <FontAwesomeIcon icon={faCalendarCheck} style={{ width: 18, height: 18 }} />
+            First Edition — Mexico City
+          </h2>
+          <div className="past-event-card">
+            <div className="past-event-header">
+              <span className="past-event-date">Feb 3, 2026</span>
+              <span className="past-event-location">
+                <FontAwesomeIcon icon={faMapMarkerAlt} style={{ width: 12, height: 12 }} />
+                Ciudad de México
+              </span>
+            </div>
+            <p className="past-event-description">
+              Sold-out event with 150+ attendees featuring technical talks, networking dinner, and a live Q&A with Anthropic&apos;s Claude Code team. Six speakers from AWS, Google, Globant, 500 Global, and more.
+            </p>
+            <div className="speakers-grid">
+              {pastEventSpeakers.map((speaker) => (
+                <div key={speaker.name} className="speaker-card">
+                  <span className="speaker-name">{speaker.name}</span>
+                  <span className="speaker-org">{speaker.org}</span>
+                  <span className="speaker-topic">{speaker.topic}</span>
+                </div>
+              ))}
+            </div>
+            <a
+              href="https://luma.com/hi2pfrcy"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="past-event-link"
+            >
+              View event on Luma
+            </a>
+          </div>
+        </section>
+
+        {/* Tour */}
+        <section className="tour-section">
+          <h2 className="section-title">
+            <FontAwesomeIcon icon={faRoute} style={{ width: 18, height: 18 }} />
+            Claude Sin Fronteras Tour 2026
+          </h2>
+          <p className="tour-tagline">9 cities · 2 countries · La mejor AI no necesita pasaporte</p>
+          <div className="tour-grid">
+            {tourCities.map((stop) => (
+              <div key={stop.city} className="tour-card">
+                <span className="tour-city">{stop.city}</span>
+                <span className="tour-meta">
+                  <span className="tour-date">{stop.date}</span>
+                  <span className="tour-country">{stop.country === 'MX' ? '🇲🇽' : '🇺🇸'}</span>
+                </span>
+              </div>
+            ))}
+          </div>
+        </section>
+
         {/* Description */}
         <section className="privacy-section" style={{ textAlign: 'center', marginBottom: '2rem' }}>
           <p style={{ opacity: 0.7, fontSize: '0.95rem', lineHeight: 1.7 }}>
-            Claude Code Meetups bring together developers, founders, and AI engineers across Mexico to share knowledge, demo projects, and build community around Claude and AI tooling. From lightning talks to hands-on build sessions, each event is a space for the LatAm tech community to connect and ship together.
+            As a Claude Community Ambassador, I organize meetups, workshops, and hackathons to bring together developers, founders, and AI engineers across Latin America and the US. With support from Anthropic, each event features live demos, lightning talks, and direct access to the Claude Code team — building bridges between LatAm talent and the global AI ecosystem.
           </p>
         </section>
 
