@@ -1213,20 +1213,53 @@ p {
     background: radial-gradient(circle, rgba(255, 255, 255, 0.4) 0%, rgba(36, 41, 46, 0.3) 50%, transparent 70%);
   }
 
-  /* Products: Teal gradient */
-  .glass-icon.products:hover {
+  .glass-icon.huggingface:hover {
     background: linear-gradient(
-      135deg,
-      #1e3a5f 0%,
-      #0d9488 100%
+      145deg,
+      rgba(255, 210, 30, 0.7) 0%,
+      rgba(255, 255, 255, 0.4) 50%,
+      rgba(255, 157, 0, 0.6) 100%
     );
     border: none;
     border-radius: 20px;
     box-shadow:
-      0 8px 24px rgba(13, 148, 136, 0.5),
-      0 0 30px rgba(13, 148, 136, 0.3),
+      0 8px 24px rgba(255, 210, 30, 0.4),
+      0 0 30px rgba(255, 210, 30, 0.25),
+      0 2px 0 rgba(255, 255, 255, 0.5) inset;
+    animation: huggingfaceGlow 2.5s ease-in-out infinite;
+    opacity: 1 !important;
+    visibility: visible !important;
+    /* Safari fixes */
+    -webkit-mask-image: -webkit-radial-gradient(white, black);
+    mask-image: radial-gradient(white, black);
+    overflow: hidden;
+  }
+
+  .glass-icon.huggingface:hover svg {
+    color: #ffd21e !important;
+    filter: drop-shadow(0 0 12px rgba(255, 210, 30, 0.9))
+            drop-shadow(0 0 20px rgba(255, 255, 255, 0.6))
+            drop-shadow(0 0 30px rgba(255, 157, 0, 0.4));
+  }
+
+  .glass-icon.huggingface:hover::before {
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.4) 0%, rgba(255, 210, 30, 0.3) 50%, transparent 70%);
+  }
+
+  /* Claude Meetups: Anthropic orange gradient */
+  .glass-icon.claude-meetups:hover {
+    background: linear-gradient(
+      135deg,
+      #b85c3e 0%,
+      #d4714e 100%
+    );
+    border: none;
+    border-radius: 20px;
+    box-shadow:
+      0 8px 24px rgba(212, 113, 78, 0.5),
+      0 0 30px rgba(212, 113, 78, 0.3),
       0 2px 0 rgba(255, 255, 255, 0.3) inset;
-    animation: productsGlow 2.5s ease-in-out infinite;
+    animation: claudeMeetupsGlow 2.5s ease-in-out infinite;
     opacity: 1 !important;
     visibility: visible !important;
     -webkit-mask-image: -webkit-radial-gradient(white, black);
@@ -1234,14 +1267,14 @@ p {
     overflow: hidden;
   }
 
-  .glass-icon.products:hover svg {
+  .glass-icon.claude-meetups:hover svg {
     color: #ffffff !important;
     filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.6))
             drop-shadow(0 0 16px rgba(255, 255, 255, 0.3));
   }
 
-  .glass-icon.products:hover::before {
-    background: radial-gradient(circle, rgba(13, 148, 136, 0.5) 0%, rgba(30, 58, 95, 0.3) 50%, transparent 70%);
+  .glass-icon.claude-meetups:hover::before {
+    background: radial-gradient(circle, rgba(212, 113, 78, 0.5) 0%, rgba(184, 92, 62, 0.3) 50%, transparent 70%);
   }
 } /* End @media (hover: hover) */
 
@@ -1306,17 +1339,32 @@ p {
   }
 }
 
-@keyframes productsGlow {
+@keyframes huggingfaceGlow {
   0%, 100% {
     box-shadow:
-      0 8px 24px rgba(13, 148, 136, 0.5),
-      0 0 30px rgba(13, 148, 136, 0.3),
+      0 8px 24px rgba(255, 210, 30, 0.4),
+      0 0 30px rgba(255, 210, 30, 0.25),
+      0 2px 0 rgba(255, 255, 255, 0.5) inset;
+  }
+  50% {
+    box-shadow:
+      0 12px 32px rgba(255, 210, 30, 0.5),
+      0 0 40px rgba(255, 157, 0, 0.35),
+      0 2px 0 rgba(255, 255, 255, 0.6) inset;
+  }
+}
+
+@keyframes claudeMeetupsGlow {
+  0%, 100% {
+    box-shadow:
+      0 8px 24px rgba(212, 113, 78, 0.5),
+      0 0 30px rgba(212, 113, 78, 0.3),
       0 2px 0 rgba(255, 255, 255, 0.3) inset;
   }
   50% {
     box-shadow:
-      0 12px 32px rgba(13, 148, 136, 0.6),
-      0 0 40px rgba(13, 148, 136, 0.4),
+      0 12px 32px rgba(212, 113, 78, 0.6),
+      0 0 40px rgba(212, 113, 78, 0.4),
       0 2px 0 rgba(255, 255, 255, 0.4) inset;
   }
 }
@@ -2225,50 +2273,3 @@ a.app-store-badge .app-store-badge-label {
   background: var(--community-gradient);
 }
 
-/* Navbar community icon hover state */
-@media (hover: hover) {
-  .glass-icon.community:hover {
-    background: linear-gradient(
-      135deg,
-      #8b5cf6 0%,
-      #6366f1 100%
-    );
-    border: none;
-    border-radius: 20px;
-    box-shadow:
-      0 8px 24px rgba(139, 92, 246, 0.5),
-      0 0 30px rgba(139, 92, 246, 0.3),
-      0 2px 0 rgba(255, 255, 255, 0.3) inset;
-    animation: communityGlow 2.5s ease-in-out infinite;
-    opacity: 1 !important;
-    visibility: visible !important;
-    -webkit-mask-image: -webkit-radial-gradient(white, black);
-    mask-image: radial-gradient(white, black);
-    overflow: hidden;
-  }
-
-  .glass-icon.community:hover svg {
-    color: #ffffff !important;
-    filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.6))
-            drop-shadow(0 0 16px rgba(255, 255, 255, 0.3));
-  }
-
-  .glass-icon.community:hover::before {
-    background: radial-gradient(circle, rgba(139, 92, 246, 0.5) 0%, rgba(99, 102, 241, 0.3) 50%, transparent 70%);
-  }
-}
-
-@keyframes communityGlow {
-  0%, 100% {
-    box-shadow:
-      0 8px 24px rgba(139, 92, 246, 0.5),
-      0 0 30px rgba(139, 92, 246, 0.3),
-      0 2px 0 rgba(255, 255, 255, 0.3) inset;
-  }
-  50% {
-    box-shadow:
-      0 12px 32px rgba(139, 92, 246, 0.6),
-      0 0 40px rgba(139, 92, 246, 0.4),
-      0 2px 0 rgba(255, 255, 255, 0.4) inset;
-  }
-}

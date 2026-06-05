@@ -15,7 +15,7 @@ import FeatureCard from '@/components/products/FeatureCard';
 export const metadata: Metadata = {
   title: 'MeetingMind - AI Meeting Assistant | Rich Lira',
   description:
-    'AI-powered meeting assistant that listens, questions, and summarizes — running on iPhone with swappable cloud and on-device providers.',
+    'AI-powered meeting assistant that listens, questions, and summarizes, running on iPhone with swappable cloud and on-device providers.',
   openGraph: {
     title: 'MeetingMind - AI Meeting Assistant',
     description:

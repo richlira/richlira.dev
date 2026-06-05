@@ -24,7 +24,7 @@ export default function PrivacyPage() {
           <p>
             MeetingMind is designed with privacy as a core principle. Your
             conversations stay on your device. We do not collect, store, or
-            transmit any personal data to our servers — because we don&apos;t
+            transmit any personal data to our servers, because we don&apos;t
             have any servers.
           </p>
         </section>

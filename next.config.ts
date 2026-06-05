@@ -1,7 +1,15 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  async redirects() {
+    return [
+      {
+        source: "/community",
+        destination: "/community/claude-code-meetups",
+        permanent: true,
+      },
+    ];
+  },
 };
 
 export default nextConfig;

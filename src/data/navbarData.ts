@@ -2,17 +2,10 @@ import { NavbarItem } from '@/types/navbar';
 
 export const navbarItems: NavbarItem[] = [
   {
-    href: '/products',
-    id: 'products',
-    iconName: 'rocket',
-    hoverColor: '#0d9488',
-    isExternal: false,
-  },
-  {
-    href: '/community',
-    id: 'community',
-    iconName: 'users',
-    hoverColor: '#8b5cf6',
+    href: '/community/claude-code-meetups',
+    id: 'claude-meetups',
+    iconName: 'claude',
+    hoverColor: '#d4714e',
     isExternal: false,
   },
   {
@@ -41,6 +34,13 @@ export const navbarItems: NavbarItem[] = [
     id: 'github',
     iconName: 'github',
     hoverColor: '#ff0000',
+    isExternal: true,
+  },
+  {
+    href: 'https://huggingface.co/richlira',
+    id: 'huggingface',
+    iconName: 'huggingface',
+    hoverColor: '#ffd21e',
     isExternal: true,
   },
 ];
