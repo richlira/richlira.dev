@@ -6,12 +6,12 @@ import {
   faBuilding,
   faGlobe,
   faMapMarkerAlt,
-  faCalendarCheck,
   faCalendarDays,
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import LiquidGlassEffect from '@/components/LiquidGlassEffect';
 import FeatureCard from '@/components/products/FeatureCard';
+import { communityEvents } from '@/data/communityEvents';
 import './meetups.css';
 
 export const metadata: Metadata = {
@@ -53,37 +53,6 @@ const features = [
   },
 ];
 
-// Source of truth: Rich's hosted events on Luma (luma.com/user/richlira)
-const communityEvents: {
-  name: string;
-  date: string;
-  country: 'MX' | 'US';
-  href: string;
-}[] = [
-  { name: 'Monterrey', date: 'Mar 20', country: 'MX', href: 'https://luma.com/claudemonterrey' },
-  { name: 'Mexico City: Build Day', date: 'Mar 21', country: 'MX', href: 'https://luma.com/claudemexicocity' },
-  { name: 'Mérida', date: 'Mar 24', country: 'MX', href: 'https://luma.com/claudemerida' },
-  { name: 'Cancún', date: 'Mar 26', country: 'MX', href: 'https://luma.com/claudecancun' },
-  { name: 'Colima', date: 'Apr 9', country: 'MX', href: 'https://luma.com/claudecolima' },
-  { name: 'Villahermosa', date: 'Apr 14', country: 'MX', href: 'https://luma.com/claudevillahermosa' },
-  { name: 'Hermosillo', date: 'Apr 16', country: 'MX', href: 'https://luma.com/claudehermosillo' },
-  { name: 'Claude for Finance CDMX', date: 'Apr 17', country: 'MX', href: 'https://luma.com/claudemexicocityfinance' },
-  { name: 'Claude Impact Lab CDMX', date: 'Apr 18', country: 'MX', href: 'https://luma.com/claudemexicocitylab' },
-  { name: 'Claude Clinic SF', date: 'Apr 20', country: 'US', href: 'https://luma.com/z5l01ry7' },
-  { name: 'Claude Para Todos SF', date: 'Apr 22', country: 'US', href: 'https://luma.com/claudesanfrancisco' },
-  { name: 'Xalapa: Workshop for Students', date: 'May 29', country: 'MX', href: 'https://luma.com/wxlb908s' },
-  { name: 'Claude Meetup for Education CDMX', date: 'Jun 2', country: 'MX', href: 'https://luma.com/lerwgp43' },
-];
-
-const pastEventSpeakers: { name: string; org?: string; topic: string }[] = [
-  { name: 'Cesar Mendez', org: 'AWS UG Leader', topic: 'Developer acceleration in the modern era' },
-  { name: 'Enrique Diaz', org: 'Google Developer Group', topic: 'Building software products with generative AI' },
-  { name: 'Carlos Lara', org: 'Saptiva AI', topic: 'Product engineering with context and MCP' },
-  { name: 'Javier Duran Vega', topic: 'Intelligent retrieval systems with Claude agents' },
-  { name: 'Carolina Acosta', org: '500 Global', topic: 'AI in venture capital' },
-  { name: 'Emilio Peña', org: 'Product LatAm', topic: 'Agentic automation workflows' },
-];
-
 export default function ClaudeCodeMeetupsPage() {
   return (
     <LiquidGlassEffect>
@@ -94,8 +63,8 @@ export default function ClaudeCodeMeetupsPage() {
             <Image
               src="/community/claude-code-meetups/icon.svg"
               alt="Claude Meetups"
-              width={100}
-              height={100}
+              width={120}
+              height={120}
             />
           </div>
           <h1>Claude Meetups</h1>
@@ -127,43 +96,6 @@ export default function ClaudeCodeMeetupsPage() {
           </div>
         </section>
 
-        {/* Past Event */}
-        <section className="past-event-section">
-          <h2 className="section-title">
-            <FontAwesomeIcon icon={faCalendarCheck} style={{ width: 18, height: 18 }} />
-            First Edition: Mexico City
-          </h2>
-          <div className="past-event-card">
-            <div className="past-event-header">
-              <span className="past-event-date">Feb 3, 2026</span>
-              <span className="past-event-location">
-                <FontAwesomeIcon icon={faMapMarkerAlt} style={{ width: 12, height: 12 }} />
-                Ciudad de México
-              </span>
-            </div>
-            <p className="past-event-description">
-              Technical talks, networking dinner, and a live Q&A with Anthropic&apos;s Claude Code team. Six speakers from AWS, Google, 500 Global, Saptiva AI, and more.
-            </p>
-            <div className="speakers-grid">
-              {pastEventSpeakers.map((speaker) => (
-                <div key={speaker.name} className="speaker-card">
-                  <span className="speaker-name">{speaker.name}</span>
-                  {speaker.org && <span className="speaker-org">{speaker.org}</span>}
-                  <span className="speaker-topic">{speaker.topic}</span>
-                </div>
-              ))}
-            </div>
-            <a
-              href="https://luma.com/hi2pfrcy"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="past-event-link"
-            >
-              View event on Luma
-            </a>
-          </div>
-        </section>
-
         {/* Community Events */}
         <section className="events-section">
           <h2 className="section-title">
@@ -171,20 +103,58 @@ export default function ClaudeCodeMeetupsPage() {
             Claude Community Events
           </h2>
           <p className="events-tagline">Community events and meetups across Mexico and the US</p>
-          <div className="events-grid">
+          <div className="event-list">
             {communityEvents.map((event) => (
               <a
-                key={event.name}
-                href={event.href}
+                key={event.slug}
+                href={event.lumaUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="events-card"
+                className="event-row"
               >
-                <span className="events-city">{event.name}</span>
-                <span className="events-meta">
-                  <span className="events-date">{event.date}</span>
-                  <span className="events-country">{event.country === 'MX' ? '🇲🇽' : '🇺🇸'}</span>
-                </span>
+                <div className="event-row-main">
+                  <Image
+                    src={event.cover}
+                    alt={`${event.city}: ${event.title}`}
+                    width={112}
+                    height={112}
+                    className="event-cover"
+                  />
+                  <div className="event-info">
+                    <span className="event-city">{event.city}</span>
+                    <span className="event-title">{event.title}</span>
+                    <span className="event-meta">
+                      <span className="event-date">{event.date}</span>
+                      <span className="event-country">{event.country === 'MX' ? '🇲🇽' : '🇺🇸'}</span>
+                      <span className="event-location">
+                        <FontAwesomeIcon icon={faMapMarkerAlt} style={{ width: 10, height: 10 }} />
+                        {event.city}
+                      </span>
+                    </span>
+                    {event.description && (
+                      <p className="event-description">{event.description}</p>
+                    )}
+                  </div>
+                </div>
+                {event.speakers && (
+                  <ul className="event-speakers">
+                    {event.speakers.map((speaker) => (
+                      <li key={speaker.name} className="event-speaker">
+                        <FontAwesomeIcon
+                          icon={faMicrophone}
+                          style={{ width: 10, height: 10 }}
+                          className="event-speaker-icon"
+                        />
+                        <span>
+                          <span className="event-speaker-name">{speaker.name}</span>
+                          {speaker.org && <span className="event-speaker-org"> · {speaker.org}</span>}
+                          {speaker.topic && <span className="event-speaker-topic">: {speaker.topic}</span>}
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
+                )}
+                <span className="event-luma-link">View on Luma →</span>
               </a>
             ))}
           </div>
