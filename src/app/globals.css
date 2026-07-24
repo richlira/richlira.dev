@@ -1147,8 +1147,8 @@ p {
     background: radial-gradient(circle, rgba(225, 48, 108, 0.6) 0%, rgba(131, 58, 180, 0.5) 40%, rgba(253, 193, 7, 0.4) 70%, transparent 90%);
   }
 
-  /* Twitter/X: Fondo negro + icono blanco */
-  .glass-icon.twitter:hover {
+  /* X: Fondo negro + icono blanco */
+  .glass-icon.x:hover {
     background: linear-gradient(
       145deg,
       #000000 0%,
@@ -1161,7 +1161,7 @@ p {
       0 8px 24px rgba(0, 0, 0, 0.5),
       0 0 30px rgba(0, 0, 0, 0.3),
       0 2px 0 rgba(255, 255, 255, 0.2) inset;
-    animation: twitterGlow 2.5s ease-in-out infinite;
+    animation: xGlow 2.5s ease-in-out infinite;
     opacity: 1 !important;
     visibility: visible !important;
     /* Safari fixes */
@@ -1170,13 +1170,13 @@ p {
     overflow: hidden;
   }
 
-  .glass-icon.twitter:hover svg {
+  .glass-icon.x:hover svg {
     color: #ffffff !important;
     filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.6)) 
             drop-shadow(0 0 16px rgba(255, 255, 255, 0.3));
   }
 
-  .glass-icon.twitter:hover::before {
+  .glass-icon.x:hover::before {
     background: radial-gradient(circle, rgba(50, 50, 50, 0.5) 0%, rgba(0, 0, 0, 0.3) 50%, transparent 70%);
   }
 
@@ -1309,7 +1309,7 @@ p {
   }
 }
 
-@keyframes twitterGlow {
+@keyframes xGlow {
   0%, 100% {
     box-shadow:
       0 8px 24px rgba(0, 0, 0, 0.5),

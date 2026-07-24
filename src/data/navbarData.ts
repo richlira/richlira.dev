@@ -23,11 +23,12 @@ export const navbarItems: NavbarItem[] = [
     isExternal: true,
   },
   {
-    href: 'https://twitter.com/soyrichlira',
-    id: 'twitter',
-    iconName: 'twitter',
-    hoverColor: '#006eff',
+    href: 'https://x.com/soyrichlira',
+    id: 'x',
+    iconName: 'x',
+    hoverColor: '#000000',
     isExternal: true,
+    ariaLabel: 'X',
   },
   {
     href: 'https://github.com/richlira',

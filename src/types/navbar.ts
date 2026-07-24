@@ -4,4 +4,5 @@ export interface NavbarItem {
   iconName: string;
   hoverColor: string;
   isExternal?: boolean;
+  ariaLabel?: string;
 }

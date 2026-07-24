@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faLinkedin,
-  faTwitter,
+  faXTwitter,
   faInstagram,
   faGithub,
   IconDefinition,
@@ -48,7 +48,7 @@ const faHuggingFace = {
 
 const iconMap: Record<string, IconDefinition> = {
   linkedin: faLinkedin,
-  twitter: faTwitter,
+  x: faXTwitter,
   instagram: faInstagram,
   github: faGithub,
   huggingface: faHuggingFace,
@@ -63,7 +63,7 @@ export default function Navbar() {
         target="_blank"
         rel="noopener noreferrer"
         id={item.id}
-        aria-label={item.id}
+        aria-label={item.ariaLabel ?? item.id}
         className={`glass-icon ${item.id}`}
       >
         <FontAwesomeIcon
@@ -76,7 +76,7 @@ export default function Navbar() {
         key={item.id}
         href={item.href}
         id={item.id}
-        aria-label={item.id}
+        aria-label={item.ariaLabel ?? item.id}
         className={`glass-icon ${item.id}`}
       >
         {item.iconName === 'claude' ? (
