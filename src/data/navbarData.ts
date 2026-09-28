@@ -2,11 +2,11 @@ import { NavbarItem } from '@/types/navbar';
 
 export const navbarItems: NavbarItem[] = [
   {
-    href: '/community/claude-code-meetups',
+    href: 'https://claude.rich',
     id: 'claude-meetups',
     iconName: 'claude',
     hoverColor: '#d4714e',
-    isExternal: false,
+    isExternal: true,
   },
   {
     href: 'https://www.linkedin.com/in/ricardolira/',

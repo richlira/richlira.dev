@@ -55,6 +55,16 @@ const iconMap: Record<string, IconDefinition> = {
 };
 
 export default function Navbar() {
+  const renderIcon = (item: (typeof navbarItems)[0]) =>
+    item.iconName === 'claude' ? (
+      <ClaudeIcon />
+    ) : (
+      <FontAwesomeIcon
+        icon={iconMap[item.iconName]}
+        className="text-4xl relative z-10"
+      />
+    );
+
   const renderItem = (item: (typeof navbarItems)[0]) =>
     item.isExternal ? (
       <a
@@ -66,10 +76,7 @@ export default function Navbar() {
         aria-label={item.ariaLabel ?? item.id}
         className={`glass-icon ${item.id}`}
       >
-        <FontAwesomeIcon
-          icon={iconMap[item.iconName]}
-          className="text-4xl relative z-10"
-        />
+        {renderIcon(item)}
       </a>
     ) : (
       <Link
@@ -79,14 +86,7 @@ export default function Navbar() {
         aria-label={item.ariaLabel ?? item.id}
         className={`glass-icon ${item.id}`}
       >
-        {item.iconName === 'claude' ? (
-          <ClaudeIcon />
-        ) : (
-          <FontAwesomeIcon
-            icon={iconMap[item.iconName]}
-            className="text-4xl relative z-10"
-          />
-        )}
+        {renderIcon(item)}
       </Link>
     );
 
